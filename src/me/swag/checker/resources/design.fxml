@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="818.0" style="-fx-background-color: #1c1f21;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="me.swag.checker.controllers.Controller">
+   <children>
+      <Label fx:id="date" graphicTextGap="0.0" layoutX="1.0" layoutY="479.0" prefHeight="27.0" prefWidth="111.0" text="Test" textFill="#e226ff">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="discordStatus" graphicTextGap="0.0" layoutX="2.0" layoutY="498.0" prefHeight="40.0" prefWidth="136.0" text="Test" textFill="#e524ff">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextArea fx:id="checkedTokens" editable="false" layoutX="424.0" layoutY="292.0" prefHeight="213.0" prefWidth="363.0" />
+      <TextArea id="yourTokenTextArea" fx:id="yourTokenTextArea" layoutX="424.0" layoutY="53.0" prefHeight="213.0" prefWidth="363.0" promptText="Insert Your Tokens">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextArea>
+      <Button fx:id="importButton" graphicTextGap="0.0" layoutX="6.0" layoutY="244.0" mnemonicParsing="false" onAction="#onAction" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #c211a5;" text="Import" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="checkButton" layoutX="128.0" layoutY="244.0" mnemonicParsing="false" onAction="#onAction" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #c211a5;" text="Check" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="exportButton" layoutX="251.0" layoutY="244.0" mnemonicParsing="false" onAction="#onAction" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #c211a5;" text="Export" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ProgressBar fx:id="loadingBar" layoutX="191.0" layoutY="483.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="200.0" progress="0.0">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </ProgressBar>
+      <TitledPane animated="false" collapsible="false" layoutX="14.0" layoutY="14.0" prefHeight="213.0" prefWidth="326.0" style="-fx-background-color: #c211a5;" stylesheets="@../stylesheets/styles.css" text="Information" textFill="#c211a5">
+         <content>
+            <AnchorPane id="infoAnchor" fx:id="infoAnchor" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label id="fileName" fx:id="fileName" layoutX="11.0" layoutY="1.0" text="File:" textFill="#cf22ff">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tokensLoaded" layoutX="10.0" layoutY="28.0" text="Tokens Loaded:" textFill="#cf22ff">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tokensChecked" layoutX="11.0" layoutY="55.0" text="Tokens Checked:" textFill="#cf22ff">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tokenHits" layoutX="10.0" layoutY="80.0" text="Token Hits:" textFill="#cf22ff">
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <Button fx:id="copyButton" layoutX="251.0" layoutY="299.0" mnemonicParsing="false" onAction="#onAction" prefHeight="45.0" prefWidth="100.0" style="-fx-background-color: #c211a5;" text="Copy" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="userTokenButton" layoutX="13.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#onMouseClickedUser" selected="true" text="User Tokens" textFill="#f80fd5">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </RadioButton>
+      <RadioButton fx:id="botTokenButton" layoutX="134.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#onRadioButtonClick" text="Bot Tokens" textFill="#f80fd5">
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </RadioButton>
+   </children>
+   <cursor>
+      <Cursor fx:constant="CROSSHAIR" />
+   </cursor>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
